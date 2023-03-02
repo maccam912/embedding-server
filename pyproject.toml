@@ -1,0 +1,26 @@
+[tool]
+[tool.pdm]
+
+[[tool.pdm.source]]
+url = "https://download.pytorch.org/whl/cpu"
+name = "torch"
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Matt Koski", email = "maccam912@gmail.com"},
+]
+dependencies = [
+    "torch>=1.13.1",
+    "uform>=0.0.5",
+    "starlite>=1.51.6",
+    "pydantic>=1.10.5",
+    "uvicorn>=0.20.0",
+]
+requires-python = ">=3.9,<3.10"
+license = {text = "MIT"}
+
+[tool.pdm.scripts]
+serve = "uvicorn --host 0.0.0.0 --port $PORT main:app"
